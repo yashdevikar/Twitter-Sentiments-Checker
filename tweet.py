@@ -13,6 +13,13 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 public_tweet = api.search(raw_input())
 
-for tweet in public_tweet:
-	#print(tweet.text)
-	print(TextBlob(tweet.text).sentiment)
+print("Do you want to read all tweets?   yes/no")
+a=raw_input()
+if a=='yes':
+	for tweet in public_tweet:	
+		print(tweet.text)
+		print(TextBlob(tweet.text).sentiment)
+		print(" ")
+else:
+	for tweet in public_tweet:
+	        print(TextBlob(tweet.text).sentiment)
